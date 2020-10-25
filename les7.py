@@ -29,10 +29,34 @@ class Matrix:
             print(f'Матрицы разного размера! Ошибка: {ex}')
         return Matrix(result)
 
+    def __sub__(self, other):
+        result = []
+        try:
+            for i in range(len(self.rows)):
+                row = []
+                for j in range(len(self.rows[0])):
+                    row.append(self.rows[i][j] - other.rows[i][j])
+                result.append(row)
+        except Exception as ex:
+            print(f'Матрицы разного размера! Ошибка: {ex}')
+        return Matrix(result)
 
-a = Matrix([[1, 2, 3, 3],
-            [4, 5, 6, 6],
-            [7, 8, 9, 9]])
+    def __mul__(self, other):
+        result = []
+        try:
+            for i in range(len(self.rows)):
+                row = []
+                for j in range(len(self.rows[0])):
+                    row.append(self.rows[i][j] * other.rows[i][j])
+                result.append(row)
+        except Exception as ex:
+            print(f'Матрицы разного размера! Ошибка: {ex}')
+        return Matrix(result)
+
+
+a = Matrix([[1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]])
 
 b = Matrix([[9, 8, 7],
             [6, 5, 4],
