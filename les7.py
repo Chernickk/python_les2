@@ -101,7 +101,6 @@ class Suit(Wear):
     def cloth_expense(self):
         return self.height * 2 + 0.3
 
-
 # coat = Coat("пальто", 5)
 # print(coat.cloth_expense)
 #
